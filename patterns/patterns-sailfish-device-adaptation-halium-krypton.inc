@@ -8,7 +8,7 @@ Requires: droid-config-halium-krypton-policy-settings
 Requires: droid-config-halium-krypton-preinit-plugin
 Requires: droid-config-halium-krypton-flashing
 Requires: droid-config-halium-krypton-bluez5
-Requires: droid-hal-vendor-img-halium-krypton
+#Requires: droid-hal-vendor-img-halium-krypton
 Requires: droid-hal-version-halium-krypton
 
 Requires: qt5-plugin-generic-evdev
