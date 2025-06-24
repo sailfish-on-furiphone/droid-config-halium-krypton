@@ -1,0 +1,12 @@
+[Unit]
+Description=Misc setup
+After=init-done.service
+
+[Service]
+Type=simple
+ExecStart=/bin/sh /usr/bin/droid/droid-misc.sh
+ExecStartPost=/bin/touch /run/user-session/droid-misc.flag
+RemainAfterExit=yes
+
+[Install]
+WantedBy=graphical.target
