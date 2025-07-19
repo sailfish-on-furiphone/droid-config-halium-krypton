@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/system/bin/logcat
+exit 0
