@@ -26,49 +26,10 @@ fi
 mkdir -p /dev/__properties__
 mkdir -p /dev/socket
 
-# Bind mount any files in /usr/share/halium-overlay/ over the android system
-OVERLAYDIR=/usr/share/halium-overlay/
-for f in $(find $OVERLAYDIR -type f) $(find $OVERLAYDIR -type l); do
-    ANDROID_POINT=${f#"$OVERLAYDIR"}
-    echo mounting $f to $ANDROID_POINT;
-    mount -o bind $f /android/$ANDROID_POINT
-done
-
 if [ -f /usr/bin/droid/halium-setup-local.sh ]; then
     /bin/sh /usr/bin/droid/halium-setup-local.sh
 fi
 
 lxc-start -n android -- /init
 
-lxc-wait -n android -s RUNNING -t 30
-containerpid="$(lxc-info -n android -p -H)"
-if [ -n "$containerpid" ]; then
-    while true; do
-        [ -f /proc/$containerpid/root/dev/.coldboot_done ] && break
-        sleep 0.1
-    done
-
-    # If the socket isn't available, 'getprop' falls back to reading files
-    # manually, causing a false positive of propertyservice being up
-    while [ ! -e /dev/socket/property_service ]; do sleep 0.1; done
-
-    systemd-notify --ready
-
-    # Systemd has a bug and can't handle the situation that notifying daemon (this one)
-    # does exit before systemd has fully handled the notify message.
-    # Thus we need to stay here and make sure systemd has handled our notify message
-    n=0
-    while [ $n -lt 3 ]; do
-        sleep 1
-        droid_status=`systemctl is-active droid-hal-init.service`
-        if [ "$droid_status" == "active" ]; then
-            break
-        fi
-        echo "info systemd again..."
-        systemd-notify --ready
-        let n=$n+1
-    done
-else
-    echo "droid container failed to start"
-    exit 1
-fi
+exit 0
