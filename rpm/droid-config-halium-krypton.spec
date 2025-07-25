@@ -23,10 +23,9 @@
 %define pixel_ratio 1.5
 
 Provides: ofono-configs-binder
-Provides: ofono-configs
-Requires: droid-config-halium
 Provides: droid-hal
 Provides: droid-config
+Provides: ofono-configs
 Provides: droid-config-halium
 AutoReqProv: no
 
