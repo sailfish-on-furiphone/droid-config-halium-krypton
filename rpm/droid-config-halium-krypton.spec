@@ -27,6 +27,7 @@ Provides: droid-hal
 Provides: droid-config
 Provides: ofono-configs
 Provides: droid-config-halium
+Obsoletes: droid-config-halium
 
 AutoReqProv: no
 
