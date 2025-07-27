@@ -27,6 +27,8 @@ Provides: droid-hal
 Provides: droid-config
 Provides: ofono-configs
 Provides: droid-config-halium
+Conflicts: droid-config-halium
+
 AutoReqProv: no
 
 %define ofono_enable_plugins bluez5,hfp_ag_bluez5
