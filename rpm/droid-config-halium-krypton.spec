@@ -26,7 +26,7 @@ Provides: ofono-configs-binder
 Provides: droid-hal
 Provides: droid-config
 Provides: ofono-configs
-Conflicts: droid-config-halium
+Provides: droid-config-halium
 
 AutoReqProv: no
 
