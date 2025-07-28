@@ -26,6 +26,8 @@ Provides: ofono-configs-binder
 Provides: droid-hal
 Provides: droid-config
 Provides: ofono-configs
+Provides: droid-hal-img-boot
+Provides: droid-hal-img-recovery
 
 AutoReqProv: no
 
