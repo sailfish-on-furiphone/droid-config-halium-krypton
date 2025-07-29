@@ -25,6 +25,7 @@ Requires: libhybris-libwayland-egl
 # Halium
 Requires: lxc
 Requires: halium-android-rootfs
+Requires: parse-android-dynparts
 
 # Bluetooth
 Requires: bluez5-tools
