@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mkdir -p /var/lib/lxc/android/rootfs
-
 # Prioritize FuriOS slots over cmdline
 if [ -f /var/lib/furios/slot ]; then
     furios_slot=$(</var/lib/furios/slot)
