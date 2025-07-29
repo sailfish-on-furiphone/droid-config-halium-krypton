@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p /var/lib/lxc/android/rootfs
+
 # Prioritize FuriOS slots over cmdline
 if [ -f /var/lib/furios/slot ]; then
     furios_slot=$(</var/lib/furios/slot)
@@ -144,26 +146,6 @@ if [ -d "/usr/share/halium-overlay/vendor" ]; then
     else
         mount -t overlay overlay -o lowerdir=/var/lib/lxc/android/rootfs/vendor,upperdir=/usr/lib/droid-vendor-overlay,workdir=/var/lib/lxc/android/ /var/lib/lxc/android/rootfs/vendor
     fi
-fi
-
-if [ -d "/apex123" ]; then
-    mount -t tmpfs tmpfs /apex
-
-    for path in "/system/apex/com.android.runtime.release" "/system/apex/com.android.runtime.debug" "/system/apex/com.android.runtime"; do
-        if [ -e "$path" ]; then
-            mkdir -p /apex/com.android.runtime
-            mount -o bind $path /apex/com.android.runtime
-            break
-        fi
-    done
-
-    for path in "/system/apex/com.android.art.release" "/system/apex/com.android.art.debug" "/system/apex/com.android.art"; do
-        if [ -e "$path" ]; then
-            mkdir -p /apex/com.android.art
-            mount -o bind $path /apex/com.android.art
-            break
-        fi
-    done
 fi
 
 # Some special handling for /android/apex
