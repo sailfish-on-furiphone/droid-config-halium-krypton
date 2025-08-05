@@ -41,6 +41,9 @@ Requires: nfcd-binder-plugin
 Requires: nfcd-mce-plugin
 Requires: libgbinder-tools
 
+# WLAN
+Requires: mtk-wifi-manager
+
 # Vibra
 Requires: ngfd-plugin-droid-vibrator
 Requires: libngf-qt5-qtfeedback
