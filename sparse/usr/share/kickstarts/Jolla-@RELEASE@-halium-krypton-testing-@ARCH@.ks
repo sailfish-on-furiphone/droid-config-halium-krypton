@@ -22,6 +22,7 @@ repo --name=jolla-@RELEASE@ --baseurl=https://releases.jolla.com/releases/@RELEA
 
 %packages
 patterns-sailfish-device-configuration-halium-krypton
+patterns-sailfish-store-applications
 %end
 
 %attachment
