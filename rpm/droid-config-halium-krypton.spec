@@ -23,12 +23,8 @@
 %define pixel_ratio 1.5
 
 Provides: ofono-configs-binder
-Provides: droid-hal
-Provides: droid-config
 Provides: ofono-configs
-Provides: droid-hal-img-boot
-Provides: droid-hal-img-recovery
-
+Requires: droid-config-halium
 AutoReqProv: no
 
 %define ofono_enable_plugins bluez5,hfp_ag_bluez5
