@@ -46,6 +46,7 @@ Requires: mtk-wifi-manager
 
 # Vibra
 Requires: libngf-qt5-qtfeedback
+Requires: ngfd-plugin-native-vibrator
 
 # Sensors
 Requires: hybris-libsensorfw-qt5
