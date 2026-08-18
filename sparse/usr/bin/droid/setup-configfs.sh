@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #Set up configfs as we are not using droid-boot init-script
-USB_DRIVER=ncm
+USB_DRIVER=ecm
 USB_FUNCTIONS=$USB_DRIVER,mtp
 GADGET_DIR=/sys/kernel/config/usb_gadget
 
