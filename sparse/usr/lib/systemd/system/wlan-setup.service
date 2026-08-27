@@ -1,0 +1,11 @@
+[Unit]
+Description=Configures the WLAN in STA mode
+After=mtk-wifi-manager.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/dbus-send --system --print-reply --dest=com.MediaTek.WiFiManager /com/MediaTek/WiFiManager com.MediaTek.WiFiManager.SetState uint32:2
+RemainAfterExit=yes
+
+[Install]
+WantedBy=graphical.target
