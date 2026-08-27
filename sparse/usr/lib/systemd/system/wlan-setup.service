@@ -4,6 +4,7 @@ After=mtk-wifi-manager.service
 
 [Service]
 Type=simple
+ExecStartPre=/bin/sleep 2
 ExecStart=/usr/bin/dbus-send --system --print-reply --dest=com.MediaTek.WiFiManager /com/MediaTek/WiFiManager com.MediaTek.WiFiManager.SetState uint32:2
 RemainAfterExit=yes
 
