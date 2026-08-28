@@ -10,8 +10,8 @@ part / --fstype="ext4" --size=10240 --label=root
 
 ## No suitable configuration found in /tmp/sandbox/usr/share/ssu/kickstart/bootloader
 
-repo --name=adaptation-community-krypton-@RELEASE@ --baseurl=http://repo.sailfishos.org/obs/nemo:/testing:/hw:/furiphone:/halium-krypton:/@RELEASEMAJMIN@/sailfish_@RELEASEMAJMIN@_@ARCH@/
-repo --name=adaptation-community-halium12-@RELEASE@ --baseurl=http://repo.sailfishos.org/obs/nemo:/testing:/hw:/halium:/12:/@RELEASEMAJMIN@/sailfish_@RELEASEMAJMIN@_@ARCH@/
+repo --name=adaptation-community-krypton-@RELEASE@ --baseurl=http://repo.sailfishos.org/obs/nemo:/testing:/hw:/furiphone:/halium-krypton:/@RELEASEMAJMIN@/sailfishos_@RELEASEMAJMIN@_@ARCH@/
+repo --name=adaptation-community-halium12-@RELEASE@ --baseurl=http://repo.sailfishos.org/obs/nemo:/testing:/hw:/halium:/12:/@RELEASEMAJMIN@/sailfishos_@RELEASEMAJMIN@_@ARCH@/
 repo --name=adaptation-community-common-@RELEASE@ --baseurl=http://repo.sailfishos.org/obs/nemo:/testing:/hw:/common/sailfishos_@RELEASEMAJMIN@_@ARCH@/
 
 repo --name=sailfishos-chum-@RELEASEMAJMIN@ --baseurl=http://repo.sailfishos.org/obs/sailfishos:/chum/@RELEASEMAJMIN@_@ARCH@/
