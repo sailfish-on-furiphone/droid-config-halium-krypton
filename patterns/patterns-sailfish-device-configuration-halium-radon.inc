@@ -43,11 +43,6 @@ Requires: csd
 # to improve camera startup times and the like
 Requires: mapplauncherd-booster-silica-qt5-media
 
-#Add FP support
-Requires: sailfish-fpd-community
-Requires: sailfish-devicelock-fpd
-#Requires: droid-fake-crypt
-
 #WLAN
 Requires: sailfish-connman-plugin-tethering-wmtwifi
 
